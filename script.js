@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('getWebsiteBtn');
     const heroTitle = document.querySelector('.hero-title');
     const floatingElements = document.querySelectorAll('.floating-element'); // Assuming these exist in your HTML
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileBtn = document.querySelector('.mobile-build-btn');
 
     // Button click animation
     if (button) { // Ensure the button exists before adding event listener
@@ -103,4 +106,61 @@ document.addEventListener('DOMContentLoaded', function() {
     adjustTextSize();
     window.addEventListener('resize', adjustTextSize);
 
-}); 
+    // Mobile menu toggle - FIXED VERSION
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    
+    // Optional: close menu when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+    });
+    
+    // Handle ALL navigation clicks (both mobile and desktop)
+    function handleNavClick(e) {
+        const href = this.getAttribute('href');
+        
+        // Only handle internal links that start with #
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            
+            const targetId = href;
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Get header height for offset
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 80;
+                
+                // Calculate position with offset
+                const elementPosition = targetElement.offsetTop;
+                const offsetPosition = elementPosition - headerHeight - 20;
+                
+                // Smooth scroll to target
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if it's open
+                if (mobileNav.classList.contains('active')) {
+                    toggleMenu();
+                }
+                
+                console.log(`Scrolling to: ${targetId}`); // Debug log
+            } else {
+                console.log(`Target element not found: ${targetId}`); // Debug log
+            }
+        }
+    }
+    
+    // Add event listeners to all navigation links
+    document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
+        link.addEventListener('click', handleNavClick);
+    });
+});

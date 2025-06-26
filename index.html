@@ -7,16 +7,45 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        @media (max-width: 768px) {
+            .hamburger:hover + .mobile-nav,
+            .mobile-nav:hover {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
+            <!-- Hamburger Menu (left) -->
+            <div class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Desktop Navigation Links -->
             <nav class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
                 <a href="https://wa.link/kmvzg7" class="build-btn" target="_blank">Build Website</a>
             </nav>
+
+            <!-- Mobile Navigation (only Home, Features, Pricing) -->
+            <nav class="mobile-nav" id="mobileNav">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+            </nav>
+
+            <!-- Mobile Get Website Button (right) -->
+            <a href="https://wa.link/kmvzg7" class="build-btn mobile-build-btn" target="_blank">Build Website</a>
         </div>
     </header>
 
