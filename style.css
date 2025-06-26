@@ -291,15 +291,16 @@ body {
         display: inline-block;
         order: 3;
         margin-left: auto;
-        padding: 8px 16px;
-        font-size: 14px;
+        padding: 14px 32px; /* Increased padding for a bigger button */
+        font-size: 1.1rem;  /* Larger font size */
         background: linear-gradient(135deg, #6366f1, #8b5cf6);
         color: #fff !important;
         border-radius: 25px;
-        font-weight: 600;
+        font-weight: 700;
         position: relative;
         z-index: 1100;
-        /* Ensure it's on the right */
+        text-decoration: none !important;
+        box-shadow: 0 4px 16px rgba(99,102,241,0.12); /* Optional: subtle shadow for emphasis */
     }
 
     .mobile-nav {
@@ -836,15 +837,16 @@ body {
         display: inline-block;
         order: 3;
         margin-left: auto;
-        padding: 8px 16px;
-        font-size: 14px;
+        padding: 14px 32px; /* Increased padding for a bigger button */
+        font-size: 1.1rem;  /* Larger font size */
         background: linear-gradient(135deg, #6366f1, #8b5cf6);
         color: #fff !important;
         border-radius: 25px;
-        font-weight: 600;
+        font-weight: 700;
         position: relative;
         z-index: 1100;
-        /* Ensure it's on the right */
+        text-decoration: none !important;
+        box-shadow: 0 4px 16px rgba(99,102,241,0.12); /* Optional: subtle shadow for emphasis */
     }
     .nav-links {
         display: none;
@@ -930,5 +932,8 @@ body {
         visibility: visible;
         transform: translateY(0);
         pointer-events: auto;
+    }
+    .mobile-build-btn {
+        text-decoration: none !important;
     }
 }
