@@ -163,4 +163,17 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
         link.addEventListener('click', handleNavClick);
     });
+    
+    window.addEventListener("load", adjustHeroPadding);
+    window.addEventListener("resize", adjustHeroPadding);
+
+    function adjustHeroPadding() {
+      const header = document.querySelector('.header');
+      const hero = document.querySelector('.hero-section');
+
+      if (header && hero) {
+        const headerHeight = header.offsetHeight;
+        hero.style.paddingTop = headerHeight + "px";
+      }
+    }
 });
