@@ -34,6 +34,9 @@ body {
 }
 
 .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 3rem;
     opacity: 0;
     transform: translateY(-30px);
@@ -43,6 +46,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    justify-content: center; /* Add this line */
     gap: 10px;
     font-size: 2rem;
     font-weight: 700;
