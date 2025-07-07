@@ -4,6 +4,55 @@
     box-sizing: border-box;
 }
 
+
+.final-section {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.final-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.final-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.final-button {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6); /* Match other buttons */
+    color: white !important;
+    padding: 16px 40px;
+    border-radius: 9999px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 16px rgba(99,102,241,0.12);
+    border: none;
+    display: inline-block;
+}
+
+.final-button:hover {
+    background: linear-gradient(135deg, #6366f1 80%, #8b5cf6 100%);
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+@media (max-width: 768px) {
+  .final-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+
  @media (max-width: 768px) {
             .hamburger:hover + .mobile-nav,
             .mobile-nav:hover {
