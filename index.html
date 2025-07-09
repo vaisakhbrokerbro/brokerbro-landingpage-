@@ -17,6 +17,21 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Hide hamburger menu on mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: none !important;
+    }
+    /* Show nav-links in mobile if needed, or keep hidden if not */
+}
+
+/* Hide Home and Features in nav-links on desktop/laptop */
+@media (min-width: 769px) {
+    .nav-links a[href="#home"],
+    .nav-links a[href="#features"] {
+        display: none !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -127,7 +142,7 @@
     </section>  
           <section class="final-section">
   <div class="final-container">
-    <h2 class="final-heading">Claim Your Free CRM</h2>
+    <h2 class="final-heading">Claim Your Free CR</h2>
     <a href="https://wa.link/kmvzg7" class="final-button">Get Free CRM</a>
   </div>
 </section>
