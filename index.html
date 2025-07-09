@@ -32,6 +32,25 @@
         display: none !important;
     }
 }
+
+.hero-section {
+    padding-top: 40px; /* Reduce this value as needed */
+}
+
+.logo-container {
+    margin-bottom: 2rem; /* Adjust as needed */
+    margin-top: 0;       /* Ensure no extra top margin */
+}
+
+.logo {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.logo-img {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: block;
+}
     </style>
 </head>
 <body>
@@ -162,5 +181,22 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+function adjustHeroPadding() {
+  const header = document.querySelector('.header');
+  const hero = document.querySelector('.hero-section');
+
+  if (header && hero) {
+    const headerHeight = header.offsetHeight;
+    hero.style.paddingTop = (headerHeight - 10) + "px"; // Subtract 10px for less gap
+  }
+}
+
+// Call the function on initial load
+adjustHeroPadding();
+
+// Optional: Call the function on window resize to adjust if necessary
+window.addEventListener('resize', adjustHeroPadding);
+</script>
 </body>
 </html>
